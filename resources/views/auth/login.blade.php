@@ -57,10 +57,13 @@
                                 @csrf
                                 <h4>Sign in to account</h4>
                                 @if (Session::has('error'))
-                                    <h1>{{Session::get('error')}}</h1>
+                                    <h1></h1>
+                                    <div class="alert alert-secondary dark alert-dismissible fade show" role="alert"><strong>{!!Session::get('error')!!}</strong>
+                                        <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close" data-bs-original-title="" title=""></button>
+                                     </div>
                                 @endif
-                                
-                                <p>Enter your email & password to login</p>
+
+                                {{-- <p>Enter your email & password to login</p> --}}
                                 <div class="form-group">
                                     <label class="col-form-label">Email Address</label>
                                     <input class="form-control" id="email" name="email" type="email" required="" value="{{ old('email') }}" autocomplete="email" autofocus>

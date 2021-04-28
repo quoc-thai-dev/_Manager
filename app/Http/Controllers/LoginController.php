@@ -16,7 +16,7 @@ class LoginController extends Controller
             }else{
                 // dd('hello');
                 // return redirect('/login')->withInput()->withErrors(['msg'=>'Email hoặc mật khẩu không đúng!']);
-                $request->session()->flash('error', 'Sai tên đăng nhập hoặc mật khẩu');
+                $request->session()->flash('error', 'Sai tên đăng nhập hoặc mật khẩu! <br> Vui lòng kiểm tra lại');
                 return redirect('/login')->withInput();
             }
             return back()->withInput();

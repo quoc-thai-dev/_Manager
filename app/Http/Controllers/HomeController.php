@@ -24,14 +24,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('template');
+        return view('home');
     }
     // public function username() {
     //     return 'username';
     // }
     public function authenticate(Request $request)
     {
-        dd($request->all());
         $credentials = $request->only('email', 'password');
         // dd($credentials);
         // dd(Auth::attempt($credentials));

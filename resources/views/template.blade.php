@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,30 +18,13 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900&amp;display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/font-awesome.css')}}">
-    <!-- ico-font-->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors/icofont.css')}}">
-    <!-- Themify icon-->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors/themify.css')}}">
-    <!-- Flag icon-->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors/flag-icon.css')}}">
-    <!-- Feather icon-->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors/feather-icon.css')}}">
-    <!-- Plugins css start-->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors/animate.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors/chartist.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors/date-picker.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors/scrollbar.css')}}">
-    <!-- Bootstrap css-->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors/bootstrap.css')}}">
-    <!-- App css-->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
-    <link id="color" rel="stylesheet" href="{{asset('assets/css/color-1.css')}}" media="screen">
-    <!-- Responsive css-->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/responsive.css')}}">
+    @include('css');
 
 </head>
-<script> var base_url = "{{asset('/')}}"; </script>
+<script>
+    var base_url = "{{asset('/')}}";
+</script>
+
 <body>
 
     <div class="loader-wrapper">
@@ -273,7 +255,8 @@
                         <li class="language-nav">
                             <div class="translate_wrapper">
                                 <div class="current_lang">
-                                    <div class="lang"><i class="flag-icon flag-icon-us"></i><span class="lang-txt">en
+                                    <div class="lang"><i class="flag-icon flag-icon-vn"></i><span class="lang-txt">Việt
+                                            Nam
                                         </span></div>
                                 </div>
                                 <div class="more_lang">
@@ -281,30 +264,6 @@
                                         <div class="lang selected" data-value="en"><i
                                                 class="flag-icon flag-icon-us"></i> <span
                                                 class="lang-txt">English</span><span> (US)</span></div>
-                                    </a>
-                                    <a href="https://laravel.pixelstrap.com/cuba/lang/de" class=" ">
-                                        <div class="lang " data-value="de"><i class="flag-icon flag-icon-de"></i> <span
-                                                class="lang-txt">Deutsch</span></div>
-                                    </a>
-                                    <a href="https://laravel.pixelstrap.com/cuba/lang/es" class="active">
-                                        <div class="lang " data-value="es"><i class="flag-icon flag-icon-es"></i> <span
-                                                class="lang-txt">Español</span></div>
-                                    </a>
-                                    <a href="https://laravel.pixelstrap.com/cuba/lang/fr" class="">
-                                        <div class="lang " data-value="fr"><i class="flag-icon flag-icon-fr"></i> <span
-                                                class="lang-txt">Français</span></div>
-                                    </a>
-                                    <a href="https://laravel.pixelstrap.com/cuba/lang/pt" class="">
-                                        <div class="lang " data-value="pt"><i class="flag-icon flag-icon-pt"></i> <span
-                                                class="lang-txt">Português</span><span> (BR)</span></div>
-                                    </a>
-                                    <a href="https://laravel.pixelstrap.com/cuba/lang/cn" class="">
-                                        <div class="lang " data-value="cn"><i class="flag-icon flag-icon-cn"></i> <span
-                                                class="lang-txt">简体中文</span></div>
-                                    </a>
-                                    <a href="https://laravel.pixelstrap.com/cuba/lang/ae" class="">
-                                        <div class="lang " data-value="en"><i class="flag-icon flag-icon-ae"></i> <span
-                                                class="lang-txt">لعربية</span> <span> (ae)</span></div>
                                     </a>
                                 </div>
                             </div>
@@ -521,19 +480,20 @@
                                 <li><a href="#"><i data-feather="mail"></i><span>Inbox</span></a></li>
                                 <li><a href="#"><i data-feather="file-text"></i><span>Taskboard</span></a></li>
                                 <li><a href="#"><i data-feather="settings"></i><span>Settings</span></a></li>
-                                <li><a href="{{route('logout')}}"><i data-feather="log-in"> </i><span>Log out</span></a></li>
+                                <li><a href="{{route('logout')}}"><i data-feather="log-in"> </i><span>Log out</span></a>
+                                </li>
                             </ul>
                         </li>
                     </ul>
                 </div>
                 <script class="result-template" type="text/x-handlebars-template">
                     <div class="ProfileCard u-cf">
-      <div class="ProfileCard-avatar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-airplay m-0"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"></path><polygon points="12 15 17 21 7 21 12 15"></polygon></svg></div>
-      <div class="ProfileCard-details">
-      <div class="ProfileCard-realName">Quốc Thái</div>
-      </div>
-      </div>
-    </script>
+                        <div class="ProfileCard-avatar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-airplay m-0"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"></path><polygon points="12 15 17 21 7 21 12 15"></polygon></svg></div>
+                        <div class="ProfileCard-details">
+                        <div class="ProfileCard-realName">Quốc Thái</div>
+                        </div>
+                        </div>
+                </script>
                 <script class="empty-template" type="text/x-handlebars-template">
                     <div class="EmptyMessage">Your search turned up 0 results. This most likely means the backend is down, yikes!</div>
                 </script>
@@ -543,52 +503,8 @@
         <!-- Page Body Start-->
         <div class="page-body-wrapper">
             <!-- Page Sidebar Start-->
-            <div class="sidebar-wrapper">
-                <div>
-                    <div class="logo-wrapper">
-                        <a href="https://laravel.pixelstrap.com/cuba"><img class="img-fluid for-light"
-                                src="https://laravel.pixelstrap.com/cuba/assets/images/logo/logo.png" alt=""><img
-                                class="img-fluid for-dark"
-                                src="https://laravel.pixelstrap.com/cuba/assets/images/logo/logo_dark.png" alt=""></a>
-                        <div class="back-btn"><i class="fa fa-angle-left"></i></div>
-                        <div class="toggle-sidebar"><i class="status_toggle middle sidebar-toggle" data-feather="grid">
-                            </i></div>
-                    </div>
-                    <div class="logo-icon-wrapper"><a href="https://laravel.pixelstrap.com/cuba"><img class="img-fluid"
-                                src="https://laravel.pixelstrap.com/cuba/assets/images/logo/logo-icon.png" alt=""></a>
-                    </div>
-                    <nav class="sidebar-main">
-                        <div class="left-arrow" id="left-arrow"><i data-feather="arrow-left"></i></div>
-                        <div id="sidebar-menu">
-                            <ul class="sidebar-links" id="simple-bar">
-                                <li class="back-btn">
-                                    <a href="https://laravel.pixelstrap.com/cuba"><img class="img-fluid"
-                                            src="https://laravel.pixelstrap.com/cuba/assets/images/logo/logo-icon.png"
-                                            alt=""></a>
-                                    <div class="mobile-back text-end"><span>Back</span><i class="fa fa-angle-right ps-2"
-                                            aria-hidden="true"></i></div>
-                                </li>
-                                <li class="sidebar-main-title">
-                                    <div>
-                                        <h6 class="lan-1">General </h6>
-                                        <p class="lan-2">Dashboards,widgets &amp; layout.</p>
-                                    </div>
-                                </li>
-                                <li class="sidebar-list">
-                                    <label class="badge badge-success">2</label><a class="sidebar-link sidebar-title active" href="#" data-bs-original-title="" title=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg><span class="lan-3">Dashboards</span>
-                                        <div class="according-menu"><i class="fa fa-angle-down"></i></div>
-                                    </a>
-                                    <ul class="sidebar-submenu" style="display: block;">
-                                        <li><a class="lan-4 active" href="https://laravel.pixelstrap.com/cuba/dashboard/index" data-bs-original-title="" title="">Default</a></li>
-                                         <li><a class="lan-5 " href="https://laravel.pixelstrap.com/cuba/dashboard/dashboard-02" data-bs-original-title="" title="">Ecommerce</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="right-arrow" id="right-arrow"><i data-feather="arrow-right"></i></div>
-                    </nav>
-                </div>
-            </div> <!-- Page Sidebar Ends-->
+            @include('sidebar')
+            <!-- Page Sidebar Ends-->
             <div class="page-body">
                 <div class="container-fluid">
                     <div class="page-title">
@@ -629,55 +545,7 @@
 
         </div>
     </div>
-    <!-- latest jquery-->
-    <script src="{{asset('assets/js/jquery-3.5.1.min.js')}}"></script>
-    <!-- Bootstrap js-->
-    <script src="{{asset('assets/js/bootstrap/bootstrap.bundle.min.js')}}"></script>
-    <!-- feather icon js-->
-    <script src="{{asset('assets/js/icons/feather-icon/feather.min.js')}}"></script>
-    <script src="{{asset('assets/js/icons/feather-icon/feather-icon.js')}}"></script>
-    <!-- scrollbar js-->
-    <script src="{{asset('assets/js/scrollbar/simplebar.js')}}"></script>
-    <script src="{{asset('assets/js/scrollbar/custom.js')}}"></script>
-    <!-- Sidebar jquery-->
-    <script src="{{asset('assets/js/config.js')}}"></script>
-    <!-- Plugins JS start-->
-
-    <script id="menu" src="{{asset('assets/js/sidebar-menu.js')}}"></script>
-    <script src="{{asset('assets/js/chart/chartist/chartist.js')}}"></script>
-    <script src="{{asset('assets/js/chart/knob/knob.min.js')}}"></script>
-    <script src="{{asset('assets/js/chart/knob/knob-chart.js')}}"></script>
-    <script src="{{asset('assets/js/chart/apex-chart/apex-chart.js')}}"></script>
-    <script src="{{asset('assets/js/chart/apex-chart/stock-prices.js')}}"></script>
-    <script src="{{asset('assets/js/notify/bootstrap-notify.min.js')}}"></script>
-    <script src="{{asset('assets/js/notify/index.js')}}"></script>
-    <script src="{{asset('assets/js/datepicker/date-picker/datepicker.js')}}"></script>
-    <script src="{{asset('assets/js/datepicker/date-picker/datepicker.en.js')}}"></script>
-    <script src="{{asset('assets/js/datepicker/date-picker/datepicker.custom.js')}}"></script>
-    <script src="{{asset('assets/js/typeahead/handlebars.js')}}"></script>
-    <script src="{{asset('assets/js/typeahead/typeahead.bundle.js')}}"></script>
-    {{-- <script src="{{asset('assets/js/typeahead/typeahead.custom.js')}}"></script> --}}
-    <script src="{{asset('assets/js/typeahead-search/handlebars.js')}}"></script>
-    <script src="{{asset('assets/js/typeahead-search/typeahead-custom.js')}}"></script>
-
-
-    <script src="{{asset('assets/js/tooltip-init.js')}}"></script>
-
-    <!-- Plugins JS Ends-->
-    <!-- Theme js-->
-    <script src="{{asset('assets/js/script.js')}}"></script>
-    {{-- <script src="{{asset('assets/js/theme-customizer/customizer.js')}}"></script> --}}
-
-
-
-    <!-- Plugin used-->
-
-    <script type="text/javascript">
-        if ($(".page-wrapper").hasClass("horizontal-wrapper")) {
-            $(".according-menu.other" ).css( "display", "none" );
-            $(".sidebar-submenu" ).css( "display", "block" );
-      }
-    </script>
+    @include('scripts')
 </body>
 
 </html>

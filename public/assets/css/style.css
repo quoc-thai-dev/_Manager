@@ -1928,7 +1928,7 @@ button:focus {
 body {
   font-size: 14px;
   overflow-x: hidden;
-  font-family: Rubik, sans-serif;
+  font-family: 'Baloo 2', serif, sans-serif;
   color: #2b2b2b; }
 
 ul {
@@ -6197,7 +6197,7 @@ table.dataTable.display tbody tr.odd > .sorting_1 {
   font-size: 80%; }
 
 .ui-front textarea {
-  font-family: Rubik, sans-serif !important; }
+  font-family: Baloo 2, sans-serif !important; }
 
 .form-builder-2 .form-group .checkbox label {
   margin-top: 0; }
@@ -9975,7 +9975,7 @@ th {
     position: relative; }
 
 .bootstrap-touchspin .input-group {
-  font-family: Rubik, sans-serif; }
+  font-family: Baloo 2, sans-serif; }
   .bootstrap-touchspin .input-group .btn {
     border-radius: 0 !important; }
 
@@ -19798,7 +19798,7 @@ footer {
   .user-profile .follow .follow-num {
     font-size: 36px;
     color: #242934;
-    font-family: Rubik, sans-serif; }
+    font-family: Baloo 2, sans-serif; }
   .user-profile .follow span {
     color: #59667a; }
 
@@ -19825,7 +19825,7 @@ footer {
     color: #dc3545; }
 
 .user-profile .like-comment span {
-  font-family: Rubik, sans-serif; }
+  font-family: Baloo 2, sans-serif; }
 
 .user-profile .social-media a {
   padding: 0 15px;
