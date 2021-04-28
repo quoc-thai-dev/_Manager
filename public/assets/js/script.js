@@ -105,8 +105,15 @@
         $('.mode i').toggleClass("fa-moon-o").toggleClass("fa-lightbulb-o");
         $('body').toggleClass("dark-only");
         var color = $(this).attr("data-attr");
-        localStorage.setItem('body', 'dark-only');
+        if(localStorage.getItem('mode')==""){
+            localStorage.setItem('mode',"dark-only");
+        }else{
+            localStorage.setItem('mode',"");
+        }
     });
+    // if (localStorage.getItem('body')=="dark-only") {
+    $('body').addClass(localStorage.getItem('mode'));
+    // } 
 
 })(jQuery);
 

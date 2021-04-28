@@ -53,17 +53,21 @@
                                     src="https://laravel.pixelstrap.com/cuba/assets/images/logo/logo_dark.png"
                                     alt="looginpage"></a></div>
                         <div class="login-main">
-                            <form class="theme-form">
+                            <form class="theme-form" method="POST" action="">
+                                @csrf
                                 <h4>Sign in to account</h4>
+                                @if (Session::has('error'))
+                                    <h1>{{Session::get('error')}}</h1>
+                                @endif
+                                
                                 <p>Enter your email & password to login</p>
                                 <div class="form-group">
                                     <label class="col-form-label">Email Address</label>
-                                    <input class="form-control" type="email" required="" placeholder="Test@gmail.com">
+                                    <input class="form-control" id="email" name="email" type="email" required="" value="{{ old('email') }}" autocomplete="email" autofocus>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-form-label">Password</label>
-                                    <input class="form-control" type="password" name="login[password]" required=""
-                                        placeholder="*********">
+                                    <input class="form-control" id="password" type="password" name="password" required="" autocomplete="current-password">
                                     <div class="show-hide"><span class="show"> </span></div>
                                 </div>
                                 <div class="form-group mb-0">
