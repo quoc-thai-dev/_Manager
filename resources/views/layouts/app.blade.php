@@ -19,7 +19,7 @@
         rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     @include('layouts.css')
-
+    @yield('css')
 </head>
 <body>
     <div class="loader-wrapper">
@@ -68,6 +68,7 @@
         </div>
     </div>
     @include('layouts.scripts')
+    @yield('js')
 </body>
 
 </html>
