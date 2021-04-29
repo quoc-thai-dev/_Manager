@@ -39,7 +39,7 @@
                             </svg><span class="lan-3">Component</span>
                             <div class="according-menu"><i class="fa fa-angle-down"></i></div>
                         </a>
-                        <ul class="sidebar-submenu" style="display: block;">
+                        <ul class="sidebar-submenu" style="display: block">
                             <li><a class="lan-4 active" href="javascript:void(0);"
                                     data-bs-original-title="" title="">JqxDataTable</a></li>
                             <li><a class="lan-5 " href="javascript:void(0);"

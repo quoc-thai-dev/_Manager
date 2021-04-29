@@ -1,2 +1,2 @@
-@extends('layouts.app');
-@section('title',"Trang chủ");
+@extends('layouts.app')
+@section('title',"Trang chủ")

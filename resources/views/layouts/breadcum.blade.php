@@ -2,7 +2,11 @@
     <div class="page-title">
         <div class="row">
             <div class="col-6">
-                <h3>Blank page</h3>
+                <h3>@if (isset($title))
+                    {{$title}}
+                @else
+                    Unknown!
+                @endif</h3>
             </div>
             <div class="col-6">
                 <ol class="breadcrumb">

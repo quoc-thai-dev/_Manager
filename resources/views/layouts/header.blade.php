@@ -421,8 +421,8 @@
                             data-feather="maximize"></i></a></li>
                 <li class="profile-nav onhover-dropdown p-0 me-0">
                     <div class="media profile-media">
-                        <img class="b-r-10"
-                            src="https://laravel.pixelstrap.com/cuba/assets/images/dashboard/profile.jpg"
+                        <img class="b-r-10 image-circle" width="37px"
+                            src="{{asset('assets/images/avtar/avatar.jpg')}}"
                             alt="">
                         <div class="media-body">
                             <span>{{Auth::user()->name}}</span>
@@ -430,7 +430,7 @@
                         </div>
                     </div>
                     <ul class="profile-dropdown onhover-show-div">
-                        <li><a href="#"><i data-feather="user"></i><span>Hồ sơ</span></a></li>
+                        <li><a href="{{route('profile')}}"><i data-feather="user"></i><span>Hồ sơ</span></a></li>
                         {{-- <li><a href="#"><i data-feather="mail"></i><span>Inbox</span></a></li>
                         <li><a href="#"><i data-feather="file-text"></i><span>Taskboard</span></a></li> --}}
                         <li><a href="#"><i data-feather="settings"></i><span>Cài đặt</span></a></li>
