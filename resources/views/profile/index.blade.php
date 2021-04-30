@@ -37,28 +37,33 @@
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label">Email</label>
-                            <input class="form-control" placeholder="your-email@domain.com" data-bs-original-title=""
+                            <label class="form-label required">Tên đăng nhập</label>
+                            <input class="form-control" placeholder="Tên đăng nhập" name="username" value="{{Auth::user()->username}}" data-bs-original-title=""
                                 title="">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Mật khẩu</label>
-                            <input class="form-control" type="password" value="password" data-bs-original-title=""
+                            <label class="form-label required">Mật khẩu cũ</label>
+                            <input class="form-control" type="password" value="*****" data-bs-original-title=""
                                 title="">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Nhập lại mật khẩu</label>
-                            <input class="form-control" type="password" value="password" data-bs-original-title=""
+                            <label class="form-label required">Mật khẩu mới</label>
+                            <input class="form-control" type="password" value="" data-bs-original-title=""
+                                title="">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label required">Nhập lại mật khẩu</label>
+                            <input class="form-control" type="password" value="" data-bs-original-title=""
                                 title="">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Trang Web</label>
-                            <input class="form-control" placeholder="http://Uplor .com" data-bs-original-title=""
+                            <input class="form-control" placeholder="abc.xyz" value="{{Auth::user()->website}}" data-bs-original-title=""
                                 title="">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Mô tả</label>
-                            <textarea class="form-control" rows="5">Nhìn cc</textarea>
+                            <textarea class="form-control" value="{{Auth::user()->description}}" rows="5">Nhìn cc</textarea>
                         </div>
                         <div class="form-footer">
                             <button class="btn btn-primary btn-block" data-bs-original-title="" title="">Lưu</button>
@@ -81,42 +86,42 @@
                         <div class="col-md-5">
                             <div class="mb-3">
                                 <label class="form-label">Tên công ty</label>
-                                <input class="form-control" type="text" placeholder="Tên công ty"
+                                <input class="form-control" type="text" value="{{Auth::user()->company_name}}" placeholder="Tên công ty"
                                     data-bs-original-title="" title="">
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-3">
                             <div class="mb-3">
-                                <label class="form-label">Tên tài khoản</label>
-                                <input class="form-control" type="text" placeholder="Tên tài khoản"
+                                <label class="form-label required">Tên tài khoản</label>
+                                <input class="form-control" type="text" value="{{Auth::user()->username}}" placeholder="Tên tài khoản"
                                     data-bs-original-title="" title="">
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-4">
                             <div class="mb-3">
-                                <label class="form-label">Địa chỉ Email</label>
-                                <input class="form-control" type="email" placeholder="Địa chỉ email"
+                                <label class="form-label required">Địa chỉ Email</label>
+                                <input class="form-control" type="email" value="{{Auth::user()->email}}" placeholder="Địa chỉ email"
                                     data-bs-original-title="" title="">
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-6">
                             <div class="mb-3">
-                                <label class="form-label">Tên</label>
-                                <input class="form-control" type="text" placeholder="Tên" data-bs-original-title=""
+                                <label class="form-label">Họ tên</label>
+                                <input class="form-control" type="text" placeholder="Họ tên" value="{{Auth::user()->name}}" data-bs-original-title=""
                                     title="">
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-6">
                             <div class="mb-3">
-                                <label class="form-label">Họ</label>
-                                <input class="form-control" type="text" placeholder="Họ" data-bs-original-title=""
+                                <label class="form-label required">Số điện thoại</label>
+                                <input class="form-control" type="text" placeholder="Số điện thoại" value="{{Auth::user()->phone}}"  data-bs-original-title=""
                                     title="">
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="mb-3">
                                 <label class="form-label">Địa chỉ</label>
-                                <input class="form-control" type="text" placeholder="Địa chỉ" data-bs-original-title=""
+                                <input class="form-control" type="text" placeholder="Địa chỉ" value="{{Auth::user()->address}}" data-bs-original-title=""
                                     title="">
                             </div>
                         </div>
@@ -129,11 +134,6 @@
                                     @foreach ($dataLocation as $lc)
                                     <option value="{{$lc["id"]}}">{{$lc["name"]}}</option>
                                     @endforeach
-                                    {{-- <option value="0">--Chọn--</option>
-                                    <option value="1">Germany</option>
-                                    <option value="2">Canada</option>
-                                    <option value="3">Usa</option>
-                                    <option value="4">Aus</option> --}}
                                 </select>
                             </div>
                         </div>
@@ -141,7 +141,7 @@
                             <div class="mb-3">
                                 <label class="form-label">Thành phố / Huyện</label>
                                 <select class="form-control btn-square" id="city">
-
+                                    <option value="">--- Chọn Thành phố / Huyện ---</option>
                                 </select>
                             </div>
                         </div>
@@ -149,7 +149,7 @@
                             <div class="mb-3">
                                 <label class="form-label">Phường / Xã</label>
                                 <select class="form-control btn-square" id="districts">
-
+                                    <option value="">--- Chọn Phường / Xã ---</option>
                                 </select>
                             </div>
                         </div>
@@ -157,6 +157,7 @@
                             <div class="mb-3">
                                 <label class="form-label">Đường</label>
                                 <select class="form-control btn-square" id="streets">
+                                    <option value="">--- Chọn Đường ---</option>
                                 </select>
                             </div>
                         </div>
@@ -182,7 +183,6 @@
 @section('js')
 <script>
     var dataLocation={!! json_encode($dataLocation) !!};
-    // console.log(dataLocation);
     var cityArr=[];
     var districtsArr=[];
     var streetsArr=[];
@@ -191,12 +191,13 @@
     var districtsObj=$('#districts');
     var streetObj=$('#streets');
 
-    var provinceSelect = '14';
-    var citySelect = '185';
-    var districtsSelect = '2597';
-    var streetsSelect = '20927';
+    provinceObj.val('');
+    // var provinceSelect = '14';
+    // var citySelect = '185';
+    // var districtsSelect = '2597';
+    // var streetsSelect = '20927';
 
-    $(document).ready(function(){
+    $(function(){
         // provinceObj.val(provinceSelect);
         // var cityObj = '';
         // var thanhPho = Array();
@@ -228,15 +229,16 @@
         // $('#districts').html(wardsHTML);
         // $('#districts').val(districtsSelect);
         // $('#streets').html(duongHTML);
-        // $('#streets').val(streetsSelect);v
-                provinceObj.val('7');
+        // $('#streets').val(streetsSelect);
+
+        provinceObj.val('14');
         $.when(provinceObj.trigger('change')).done(function(){
-            cityObj.val('101');
+            cityObj.val('185');
             $.when(cityObj.trigger('change')).done(function(){
-                districtsObj.val('1506');
+                districtsObj.val('2597');
                 $.when(districtsObj.trigger('change')).done(function(){
-                    streetObj.val('17110');
-            });
+                    streetObj.val('20927');
+                });
             });
         });
     })
@@ -246,11 +248,10 @@
         cityObj.val("");
         districtsObj.val("");
         streetObj.val('');
-
         //
         let provinceID=$(this).val();
-        cityArr=dataLocation.find(x => x.id === provinceID)?.districts;
-        let html=cityArr.map(city=>`<option value="${city["id"]}">${city["name"]}</option>`).join('');
+        cityArr=dataLocation.find(x => x?.id === provinceID)?.districts;
+        let html=cityArr.map(city=>`<option value="${city?.id}">${city?.name}</option>`).join('');
         html='<option value="">--- Chọn Thành phố / Huyện ---</option>'+html;
         cityObj.html(html);
     })
@@ -258,17 +259,18 @@
         // Delete province and street
         districtsObj.val('');
         streetObj.val('');
-
-        districtsArr=cityArr.find(x => x.id === $(this).val())?.wards;
-        let html =districtsArr.map(dis=>`<option value="${dis["id"]}">${dis["prefix"]} ${dis["name"]}</option>`).join('');
+        //
+        districtsArr=cityArr.find(x => x?.id === $(this).val())?.wards;
+        let html =districtsArr.map(dis=>`<option value="${dis?.id}">${dis?.prefix} ${dis?.name}</option>`).join('');
         html='<option value="">--- Chọn Chọn phường / Xã ---</option>'+html;
         districtsObj.html(html);
     })
     districtsObj.on('change',function(){
         // Delete street and districts
         streetObj.val('');
-        streetsArr=cityArr.find(x => x.id === cityObj.val())?.streets;
-        let html =streetsArr.map(str=>`<option value="${str["id"]}">${str["prefix"]} ${str["name"]}</option>`).join('');
+        //
+        streetsArr=cityArr.find(x => x?.id === cityObj.val())?.streets;
+        let html =streetsArr.map(str=>`<option value="${str?.id}">${str["prefix"]} ${str?.name}</option>`).join('');
         html='<option value="">--- Chọn đường ---</option>'+html;
         streetObj.html(html);
     })

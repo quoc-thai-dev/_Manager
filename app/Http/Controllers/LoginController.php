@@ -11,7 +11,15 @@ class LoginController extends Controller
 {
     public function index(Request $request){
         if($request->isMethod('post')){
-            if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){
+            if(is_numeric($request->username)){
+                $field = 'phone';
+            } elseif (filter_var($request->username, FILTER_VALIDATE_EMAIL)) {
+                $field = 'email';
+            } else {
+                $field = 'username';
+            }
+            // dd($field);
+            if(Auth::attempt([$field => $request->username, 'password' => $request->password])){
                 return redirect('/');
             }else{
                 // dd('hello');

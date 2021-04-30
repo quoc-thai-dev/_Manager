@@ -69,6 +69,7 @@
     </div>
     @include('layouts.scripts')
     @yield('js')
+    <script src="{{asset('assets/custom/main.js')}}"></script>
 </body>
 
 </html>

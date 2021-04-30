@@ -66,8 +66,8 @@
 
                                 {{-- <p>Enter your email & password to login</p> --}}
                                 <div class="form-group">
-                                    <label class="col-form-label">Email Address</label>
-                                    <input class="form-control" id="email" name="email" type="email" required="" value="{{ old('email') }}" autocomplete="email" autofocus>
+                                    <label class="col-form-label">User Name</label>
+                                    <input class="form-control" id="email" name="username" type="username" required="" value="{{ old('username') }}" autocomplete="username" autofocus>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-form-label">Password</label>
