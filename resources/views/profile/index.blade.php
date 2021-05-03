@@ -67,6 +67,7 @@
                         </div>
                         <div class="form-footer">
                             <button class="btn btn-primary btn-block" data-bs-original-title="" title="">Lưu</button>
+                            <label class="form-label pull-right text-danger"> (*) Thông tin bắt buộc</label>
                         </div>
                     </form>
                 </div>
@@ -165,13 +166,13 @@
                         <div class="col-md-12">
                             <div>
                                 <label class="form-label">Thông tin bản thân</label>
-                                <textarea class="form-control" rows="5" placeholder="Thông tin bản thân"></textarea>
+                                <textarea class="form-control" rows="5" value="{{Auth::user()->info}}" placeholder="Thông tin bản thân"></textarea>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="card-footer text-end">
-                    <button class="btn btn-primary" type="submit" data-bs-original-title="" title="">Cập nhật hồ
+                    <button class="btn btn-primary" type="submit" data-bs-original-title="hello" title="">Cập nhật hồ
                         sơ</button>
                 </div>
             </form>
@@ -181,6 +182,7 @@
 @endsection
 
 @section('js')
+{{-- <script src=""></script> --}}
 <script>
     var dataLocation={!! json_encode($dataLocation) !!};
     var cityArr=[];

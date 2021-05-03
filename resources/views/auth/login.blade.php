@@ -54,9 +54,9 @@
                                     src="https://laravel.pixelstrap.com/cuba/assets/images/logo/logo_dark.png"
                                     alt="looginpage"></a></div>
                         <div class="login-main">
-                            <form class="theme-form" method="POST" action="">
+                            <form class="theme-form" method="POST" action="" id="login-form">
                                 @csrf
-                                <h4>Sign in to account</h4>
+                                <h4>Đăng nhập</h4>
                                 @if (Session::has('error'))
                                     <h1></h1>
                                     <div class="alert alert-secondary dark alert-dismissible fade show" role="alert"><strong>{!!Session::get('error')!!}</strong>
@@ -66,25 +66,27 @@
 
                                 {{-- <p>Enter your email & password to login</p> --}}
                                 <div class="form-group">
-                                    <label class="col-form-label">User Name</label>
-                                    <input class="form-control" id="email" name="username" type="username" required="" value="{{ old('username') }}" autocomplete="username" autofocus>
+                                    <label class="col-form-label">Tên đăng nhập</label>
+                                    <input class="form-control" id="username" name="username" type="username" required="" value="{{ old('username') }}" autocomplete="username" autofocus>
+                                    <span class="invalid-feedback"></span>
                                 </div>
+							
                                 <div class="form-group">
-                                    <label class="col-form-label">Password</label>
+                                    <label class="col-form-label">Mật khẩu</label>
                                     <input class="form-control" id="password" type="password" name="password" required="" autocomplete="current-password">
-                                    <div class="show-hide"><span class="show"> </span></div>
+                                    <div class="show-hide"><span class="show"></span></div>
+                                    <span class="invalid-feedback">Vui lòng nhập mật khẩu</span>
                                 </div>
                                 <div class="form-group mb-0">
                                     <div class="checkbox p-0">
                                         <input id="checkbox1" type="checkbox">
-                                        <label class="text-muted" for="checkbox1">Remember password</label>
+                                        <label class="text-muted" for="checkbox1">Nhớ mất khẩu</label>
                                     </div>
                                     <a class="link"
-                                        href="https://laravel.pixelstrap.com/cuba/authentication/forget-password">Forgot
-                                        password?</a>
+                                        href="https://laravel.pixelstrap.com/cuba/authentication/forget-password">Quên mật khẩu?</a>
                                     <button class="btn btn-primary btn-block" type="submit">Sign in</button>
                                 </div>
-                                <h6 class="text-muted mt-4 or">Or Sign in with</h6>
+                                {{-- <h6 class="text-muted mt-4 or">Hoặc đăng nhập với</h6>
                                 <div class="social mt-4">
                                     <div class="btn-showcase"><a class="btn btn-light"
                                             href="https://www.linkedin.com/login" target="_blank"><i
@@ -94,10 +96,9 @@
                                                 data-feather="twitter"></i>twitter</a><a class="btn btn-light"
                                             href="https://www.facebook.com/" target="_blank"><i class="txt-fb"
                                                 data-feather="facebook"></i>facebook</a></div>
-                                </div>
-                                <p class="mt-4 mb-0">Don't have account?<a class="ms-2"
-                                        href="https://laravel.pixelstrap.com/cuba/authentication/sign-up">Create
-                                        Account</a></p>
+                                </div> --}}
+                                <p class="mt-4 mb-0">Chưa có tài khoản ?<a class="ms-2"
+                                        href="https://laravel.pixelstrap.com/cuba/authentication/sign-up">Tạo tài khoản mới</a></p>
                             </form>
                         </div>
                     </div>
@@ -113,6 +114,7 @@
     <!-- feather icon js-->
     <script src="{{asset('assets/js/icons/feather-icon/feather.min.js')}}"></script>
     <script src="{{asset('assets/js/icons/feather-icon/feather-icon.js')}}"></script>
+    <script src="{{asset('assets/js/form-validation-custom.js')}}"></script>
     <!-- scrollbar js-->
     <!-- Sidebar jquery-->
     <script src="{{asset('assets/js/config.js')}}"></script>
@@ -121,6 +123,18 @@
     <!-- Theme js-->
     <script src="{{asset('assets/js/script.js')}}"></script>
     <!-- Plugin used-->
+    <!-- Custom validate start -->
+    <script src="{{asset('assets/custom/validator.js')}}"></script>
+    <!-- Custom validate end -->
+    <script>
+        Validator({
+            form:'#login-form',
+            rules:[
+                Validator.isRequired('#username'),
+                Validator.isPassword('#password')
+            ]
+        })
+    </script>
 </body>
 
 </html>
