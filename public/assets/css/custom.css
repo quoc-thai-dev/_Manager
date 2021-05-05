@@ -1,0 +1,61 @@
+/* fail */
+.alert-fail button {
+	top: 24px !important;
+	right: 30px !important;
+	color: #f8406f;
+}
+
+.alert-fail span + span + span {
+	background-color: #fff;
+	color: #f8406f;
+	border-radius: 4px;
+	-webkit-box-shadow: 0 2px 14px -3px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 2px 14px -3px rgba(0, 0, 0, 0.2);
+}
+
+.alert-fail i {
+	padding: 20px;
+	padding-right: 0 !important;
+	margin-right: 20px !important;
+}
+
+.alert-fail .progress {
+	margin-top: -2px !important;
+	height: 2px;
+	margin-left: 9px;
+	width: 100%;
+}
+.alert-fail .progress .progress-bar {
+	background-color: #f8406f;
+}
+/* success */
+.alert-succ button {
+	top: 24px !important;
+	right: 30px !important;
+	color: #53bf26;
+}
+
+.alert-succ span + span + span {
+	background-color: #fff;
+	color: #53bf26;
+	border-radius: 4px;
+	-webkit-box-shadow: 0 2px 14px -3px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 2px 14px -3px rgba(0, 0, 0, 0.2);
+}
+
+.alert-succ i {
+	padding: 20px;
+	padding-right: 0 !important;
+	margin-right: 20px !important;
+}
+
+.alert-succ .progress {
+	margin-top: -2px !important;
+	height: 2px;
+	margin-left: 9px;
+	width: 100%;
+}
+.alert-succ .progress .progress-bar {
+	background-color: #53bf26;
+}
+

@@ -67,10 +67,10 @@
                                 {{-- <p>Enter your email & password to login</p> --}}
                                 <div class="form-group">
                                     <label class="col-form-label">Tên đăng nhập</label>
-                                    <input class="form-control" id="username" name="username" type="username" required="" value="{{ old('username') }}" autocomplete="username" autofocus>
+                                    <input class="form-control" id="username" name="username" type="username" required="" value="{{ old('username') }}" autocomplete="username">
                                     <span class="invalid-feedback"></span>
                                 </div>
-							
+
                                 <div class="form-group">
                                     <label class="col-form-label">Mật khẩu</label>
                                     <input class="form-control" id="password" type="password" name="password" required="" autocomplete="current-password">
@@ -80,11 +80,11 @@
                                 <div class="form-group mb-0">
                                     <div class="checkbox p-0">
                                         <input id="checkbox1" type="checkbox">
-                                        <label class="text-muted" for="checkbox1">Nhớ mất khẩu</label>
+                                        <label class="text-muted" for="checkbox1">Nhớ mật khẩu</label>
                                     </div>
                                     <a class="link"
                                         href="https://laravel.pixelstrap.com/cuba/authentication/forget-password">Quên mật khẩu?</a>
-                                    <button class="btn btn-primary btn-block" type="submit">Sign in</button>
+                                    <button class="btn btn-primary btn-block" type="submit">Đăng nhập</button>
                                 </div>
                                 {{-- <h6 class="text-muted mt-4 or">Hoặc đăng nhập với</h6>
                                 <div class="social mt-4">

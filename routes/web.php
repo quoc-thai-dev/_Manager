@@ -26,5 +26,6 @@ Route::group(['middleware'=>'auth'],function () {
     Route::get('/logout', 'LoginController@logout')->name('logout');
     Route::group(['prefix' => 'profile'], function () {
         Route::get('/', 'ProfileCOntroller@index')->name('profile');
+        Route::post('/update', 'ProfileCOntroller@updateProfile')->name('update_profile');
     });
 });

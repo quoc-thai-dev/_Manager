@@ -74,7 +74,7 @@
             </div>
         </div>
         <div class="col-xl-8">
-            <form class="card">
+            <form class="card" id="form-update-profile">
                 <div class="card-header">
                     <h4 class="card-title mb-0">Chỉnh sửa hồ sơ</h4>
                     <div class="card-options"><a class="card-options-collapse" href="#" data-bs-toggle="card-collapse"
@@ -87,42 +87,42 @@
                         <div class="col-md-5">
                             <div class="mb-3">
                                 <label class="form-label">Tên công ty</label>
-                                <input class="form-control" type="text" value="{{Auth::user()->company_name}}" placeholder="Tên công ty"
+                                <input class="form-control" type="text" name="company_name" value="{{Auth::user()->company_name}}" placeholder="Tên công ty"
                                     data-bs-original-title="" title="">
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-3">
                             <div class="mb-3">
                                 <label class="form-label required">Tên tài khoản</label>
-                                <input class="form-control" type="text" value="{{Auth::user()->username}}" placeholder="Tên tài khoản"
+                                <input class="form-control" type="text" name="username" value="{{Auth::user()->username}}" placeholder="Tên tài khoản"
                                     data-bs-original-title="" title="">
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-4">
                             <div class="mb-3">
                                 <label class="form-label required">Địa chỉ Email</label>
-                                <input class="form-control" type="email" value="{{Auth::user()->email}}" placeholder="Địa chỉ email"
+                                <input class="form-control" type="email" name="email" value="{{Auth::user()->email}}" placeholder="Địa chỉ email"
                                     data-bs-original-title="" title="">
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-6">
                             <div class="mb-3">
                                 <label class="form-label">Họ tên</label>
-                                <input class="form-control" type="text" placeholder="Họ tên" value="{{Auth::user()->name}}" data-bs-original-title=""
+                                <input class="form-control" type="text" placeholder="Họ tên" name="name" value="{{Auth::user()->name}}" data-bs-original-title=""
                                     title="">
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-6">
                             <div class="mb-3">
                                 <label class="form-label required">Số điện thoại</label>
-                                <input class="form-control" type="text" placeholder="Số điện thoại" value="{{Auth::user()->phone}}"  data-bs-original-title=""
+                                <input class="form-control" type="text" placeholder="Số điện thoại" name="phone" value="{{Auth::user()->phone}}"  data-bs-original-title=""
                                     title="">
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="mb-3">
                                 <label class="form-label">Địa chỉ</label>
-                                <input class="form-control" type="text" placeholder="Địa chỉ" value="{{Auth::user()->address}}" data-bs-original-title=""
+                                <input class="form-control" type="text" placeholder="Địa chỉ" name="address" value="{{Auth::user()->address}}" data-bs-original-title=""
                                     title="">
                             </div>
                         </div>
@@ -166,13 +166,13 @@
                         <div class="col-md-12">
                             <div>
                                 <label class="form-label">Thông tin bản thân</label>
-                                <textarea class="form-control" rows="5" value="{{Auth::user()->info}}" placeholder="Thông tin bản thân"></textarea>
+                                <textarea class="form-control" rows="5" id="info" name="info" placeholder="Thông tin bản thân">{{Auth::user()->info}}</textarea>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="card-footer text-end">
-                    <button class="btn btn-primary" type="submit" data-bs-original-title="hello" title="">Cập nhật hồ
+                    <button class="btn btn-primary" type="submit" data-bs-original-title="Cập nhật hồ sơ" title="">Cập nhật hồ
                         sơ</button>
                 </div>
             </form>
@@ -182,99 +182,14 @@
 @endsection
 
 @section('js')
-{{-- <script src=""></script> --}}
+<script src="app/profile/profile.js"></script>
 <script>
     var dataLocation={!! json_encode($dataLocation) !!};
-    var cityArr=[];
-    var districtsArr=[];
-    var streetsArr=[];
-    var provinceObj=$('#province');
-    var cityObj=$('#city');
-    var districtsObj=$('#districts');
-    var streetObj=$('#streets');
-
-    provinceObj.val('');
-    // var provinceSelect = '14';
-    // var citySelect = '185';
-    // var districtsSelect = '2597';
-    // var streetsSelect = '20927';
-
-    $(function(){
-        // provinceObj.val(provinceSelect);
-        // var cityObj = '';
-        // var thanhPho = Array();
-        // $.each(dataLocation,function(index,item){
-        //     if(item.id==$(provinceObj).val()){
-        //         thanhPho.push(item.districts);
-        //     }
-        // });
-        // var cityHTML = '';
-        // var provinceObjArray = Array();
-        // var duongArray = Array();
-        // $.each(thanhPho[0],function(index,item){
-        //     cityHTML+=`<option  value="`+item.id+`">`+item.name+`</option>`;
-        //     if(item.id==citySelect){
-        //         provinceObjArray.push(item.wards);
-        //         duongArray.push(item.streets);
-        //     }
-        // });
-        // var wardsHTML = '';
-        // $.each(provinceObjArray[0],function(index,item){
-        //     wardsHTML+=`<option value="`+item.id+`">`+item.name+`</option>`;
-        // });
-        // var duongHTML = '';
-        // $.each(duongArray[0],function(index,item){
-        //     duongHTML+=`<option value="`+item.id+`">`+item.name+`</option>`;
-        // });
-        // $('#city').html(cityHTML);
-        // $('#city').val(citySelect);
-        // $('#districts').html(wardsHTML);
-        // $('#districts').val(districtsSelect);
-        // $('#streets').html(duongHTML);
-        // $('#streets').val(streetsSelect);
-
-        provinceObj.val('14');
-        $.when(provinceObj.trigger('change')).done(function(){
-            cityObj.val('185');
-            $.when(cityObj.trigger('change')).done(function(){
-                districtsObj.val('2597');
-                $.when(districtsObj.trigger('change')).done(function(){
-                    streetObj.val('20927');
-                });
-            });
-        });
-    })
-    // cityObj.change();
-    provinceObj.on('change',function(){
-        // Delete city and province and street
-        cityObj.val("");
-        districtsObj.val("");
-        streetObj.val('');
-        //
-        let provinceID=$(this).val();
-        cityArr=dataLocation.find(x => x?.id === provinceID)?.districts;
-        let html=cityArr.map(city=>`<option value="${city?.id}">${city?.name}</option>`).join('');
-        html='<option value="">--- Chọn Thành phố / Huyện ---</option>'+html;
-        cityObj.html(html);
-    })
-    cityObj.on('change',function(){
-        // Delete province and street
-        districtsObj.val('');
-        streetObj.val('');
-        //
-        districtsArr=cityArr.find(x => x?.id === $(this).val())?.wards;
-        let html =districtsArr.map(dis=>`<option value="${dis?.id}">${dis?.prefix} ${dis?.name}</option>`).join('');
-        html='<option value="">--- Chọn Chọn phường / Xã ---</option>'+html;
-        districtsObj.html(html);
-    })
-    districtsObj.on('change',function(){
-        // Delete street and districts
-        streetObj.val('');
-        //
-        streetsArr=cityArr.find(x => x?.id === cityObj.val())?.streets;
-        let html =streetsArr.map(str=>`<option value="${str?.id}">${str["prefix"]} ${str?.name}</option>`).join('');
-        html='<option value="">--- Chọn đường ---</option>'+html;
-        streetObj.html(html);
-    })
+    var profile = new Profile();
+    profile.dataLocation=dataLocation;
+    profile.url={
+        url_update:"{{route('update_profile')}}"
+    }
+    profile.init();
 </script>
 @endsection
