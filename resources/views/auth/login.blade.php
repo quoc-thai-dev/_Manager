@@ -49,9 +49,9 @@
                     <div>
                         <div><a class="logo" href="https://laravel.pixelstrap.com/cuba/dashboard/index"><img
                                     class="img-fluid for-light"
-                                    src="https://laravel.pixelstrap.com/cuba/assets/images/logo/login.png"
+                                    src="{{asset('assets/images/logo/logo.png')}}"
                                     alt="looginpage"><img class="img-fluid for-dark"
-                                    src="https://laravel.pixelstrap.com/cuba/assets/images/logo/logo_dark.png"
+                                    src="{{asset('assets/images/logo/logo_dark.png')}}"
                                     alt="looginpage"></a></div>
                         <div class="login-main">
                             <form class="theme-form" method="POST" action="" id="login-form">
@@ -67,13 +67,13 @@
                                 {{-- <p>Enter your email & password to login</p> --}}
                                 <div class="form-group">
                                     <label class="col-form-label">Tên đăng nhập</label>
-                                    <input class="form-control" id="username" name="username" type="username" required="" value="{{ old('username') }}" autocomplete="username">
+                                    <input class="form-control" id="username" name="username" type="username" value="{{ old('username') }}" autocomplete="username">
                                     <span class="invalid-feedback"></span>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="col-form-label">Mật khẩu</label>
-                                    <input class="form-control" id="password" type="password" name="password" required="" autocomplete="current-password">
+                                    <input class="form-control" id="password" type="password" name="password"  autocomplete="current-password">
                                     <div class="show-hide"><span class="show"></span></div>
                                     <span class="invalid-feedback">Vui lòng nhập mật khẩu</span>
                                 </div>
@@ -130,8 +130,10 @@
         Validator({
             form:'#login-form',
             rules:[
-                Validator.isRequired('#username'),
-                Validator.isPassword('#password')
+                Validator.isRequired('#username','Tên đăng nhập không được bỏ trống!'),
+                Validator.isEmail('#username'),
+                Validator.isRequired('#password','Mật khẩu không được bỏ trống!'),
+                Validator.minLength('#password',6,'Mật khẩu không được dưới 6 ký tự!')
             ]
         })
     </script>

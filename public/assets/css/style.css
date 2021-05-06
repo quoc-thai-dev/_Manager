@@ -17939,8 +17939,8 @@ footer {
 
 .show-hide {
   position: absolute;
-  top: 52px;
-  right: 20px;
+  top: 54px;
+  right: 35px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%); }
   .show-hide span {
