@@ -18,7 +18,7 @@
  <script src="{{asset('assets/js/chart/apex-chart/apex-chart.js')}}"></script>
  <script src="{{asset('assets/js/chart/apex-chart/stock-prices.js')}}"></script> --}}
  <script src="{{asset('assets/js/notify/bootstrap-notify.min.js')}}"></script>
- <script src="{{asset('assets/js/notify/index.js')}}"></script>
+ {{-- <script src="{{asset('assets/js/notify/index.js')}}"></script> --}}
  {{-- <script src="{{asset('assets/js/datepicker/date-picker/datepicker.js')}}"></script>
  <script src="{{asset('assets/js/datepicker/date-picker/datepicker.en.js')}}"></script>
  <script src="{{asset('assets/js/datepicker/date-picker/datepicker.custom.js')}}"></script> --}}

@@ -38,7 +38,7 @@
 
                         <div class="mb-3">
                             <label class="form-label required">Tên đăng nhập</label>
-                            <input class="form-control" placeholder="Tên đăng nhập" name="username" value="{{Auth::user()->username}}" data-bs-original-title=""
+                            <input class="form-control" placeholder="Tên đăng nhập" name="username" readonly value="{{Auth::user()->username}}" data-bs-original-title=""
                                 title="">
                         </div>
                         <div class="mb-3">
@@ -84,24 +84,24 @@
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-md-5">
+                        <div class="col-md-6">
                             <div class="mb-3">
                                 <label class="form-label">Tên công ty</label>
                                 <input class="form-control" type="text" name="company_name" value="{{Auth::user()->company_name}}" placeholder="Tên công ty"
                                     data-bs-original-title="" title="">
                             </div>
                         </div>
-                        <div class="col-sm-6 col-md-3">
+                        {{-- <div class="col-sm-6 col-md-3">
                             <div class="mb-3">
                                 <label class="form-label required">Tên tài khoản</label>
-                                <input class="form-control" type="text" name="username" value="{{Auth::user()->username}}" placeholder="Tên tài khoản"
+                                <input class="form-control" type="text" name="username" readonly value="{{Auth::user()->username}}" placeholder="Tên tài khoản"
                                     data-bs-original-title="" title="">
                             </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
+                        </div> --}}
+                        <div class="col-sm-6 col-md-6">
                             <div class="mb-3">
                                 <label class="form-label required">Địa chỉ Email</label>
-                                <input class="form-control" type="email" name="email" value="{{Auth::user()->email}}" placeholder="Địa chỉ email"
+                                <input class="form-control" type="email" name="email" readonly value="{{Auth::user()->email}}" placeholder="Địa chỉ email"
                                     data-bs-original-title="" title="">
                             </div>
                         </div>
