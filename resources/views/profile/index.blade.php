@@ -22,7 +22,7 @@
                             title=""><i class="fe fe-x"></i></a></div>
                 </div>
                 <div class="card-body">
-                    <form>
+                    <form id="form-update-user">
                         <div class="row mb-2">
                             <div class="profile-title">
                                 <div class="media">
@@ -38,32 +38,43 @@
 
                         <div class="mb-3">
                             <label class="form-label required">Tên đăng nhập</label>
-                            <input class="form-control" placeholder="Tên đăng nhập" name="username" readonly value="{{Auth::user()->username}}" data-bs-original-title=""
+                            <input class="form-control" placeholder="Tên đăng nhập" id="username" name="username" disabled value="{{Auth::user()->username}}" data-bs-original-title=""
                                 title="">
+                                <span class="invalid-feedback"></span>
+
                         </div>
                         <div class="mb-3">
                             <label class="form-label required">Mật khẩu cũ</label>
-                            <input class="form-control" type="password" value="*****" data-bs-original-title=""
+                            <input class="form-control" type="password" id="_old_password"  name="_old_password" value="*****" data-bs-original-title=""
                                 title="">
+                                <span class="invalid-feedback"></span>
                         </div>
                         <div class="mb-3">
                             <label class="form-label required">Mật khẩu mới</label>
-                            <input class="form-control" type="password" value="" data-bs-original-title=""
+                            <input class="form-control" type="password" id="_new_password" name="_new_password" value="" data-bs-original-title=""
                                 title="">
+                                <span class="invalid-feedback"></span>
+
                         </div>
                         <div class="mb-3">
                             <label class="form-label required">Nhập lại mật khẩu</label>
-                            <input class="form-control" type="password" value="" data-bs-original-title=""
+                            <input class="form-control" type="password" id="_renew_password" name="_renew_password" value="" data-bs-original-title=""
                                 title="">
+                                <span class="invalid-feedback"></span>
+
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Trang Web</label>
-                            <input class="form-control" placeholder="abc.xyz" value="{{Auth::user()->website}}" data-bs-original-title=""
+                            <input class="form-control" placeholder="abc.xyz" id="website" name="website" value="{{Auth::user()->website}}" data-bs-original-title=""
                                 title="">
+                                <span class="invalid-feedback"></span>
+
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Mô tả</label>
-                            <textarea class="form-control" value="{{Auth::user()->description}}" rows="5">Nhìn cc</textarea>
+                            <textarea class="form-control" name="description" id="description" value="{{Auth::user()->description}}" rows="5">Nhìn cc</textarea>
+                            <span class="invalid-feedback"></span>
+
                         </div>
                         <div class="form-footer">
                             <button class="btn btn-primary btn-block" data-bs-original-title="" title="">Lưu</button>
@@ -91,13 +102,6 @@
                                     data-bs-original-title="" title="">
                             </div>
                         </div>
-                        {{-- <div class="col-sm-6 col-md-3">
-                            <div class="mb-3">
-                                <label class="form-label required">Tên tài khoản</label>
-                                <input class="form-control" type="text" name="username" readonly value="{{Auth::user()->username}}" placeholder="Tên tài khoản"
-                                    data-bs-original-title="" title="">
-                            </div>
-                        </div> --}}
                         <div class="col-sm-6 col-md-6">
                             <div class="mb-3">
                                 <label class="form-label required">Địa chỉ Email</label>
@@ -182,7 +186,7 @@
 @endsection
 
 @section('js')
-<script src="app/profile/profile.js"></script>
+<script src="{{asset('app/profile/profile.js')}}"></script>
 <script>
     var dataLocation={!! json_encode($dataLocation) !!};
     var profile = new Profile();
@@ -190,6 +194,21 @@
     profile.url={
         url_update:"{{route('update_profile')}}"
     }
+    Validator({
+        form:'#form-update-user',
+        rules:[
+            Validator.isRequired('#_old_password','Mật khẩu không được bỏ trống!'),
+            Validator.minLength('#_old_password',6,'Mật khẩu không được dưới 6 ký tự!'),
+            Validator.minLength('#_new_password',6,'Mật khẩu không được dưới 6 ký tự!'),
+            Validator.minLength('#_renew_password',6,'Mật khẩu không được dưới 6 ký tự!'),
+            Validator.isWebsite('#website','Địa chỉ website không hợp lệ!')
+        ],
+        onSubmit:(data)=>{
+            // Call Api here
+            console.log(data);
+
+        }
+    })
     profile.init();
 </script>
 @endsection

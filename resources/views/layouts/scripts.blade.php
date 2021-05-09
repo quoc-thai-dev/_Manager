@@ -33,6 +33,11 @@
  <script src="{{asset('assets/js/script.js')}}"></script>
  {{-- <script src="{{asset('assets/js/theme-customizer/customizer.js')}}"></script> --}}
  <!-- Plugin used-->
+  <!-- Custom validate start -->
+  <script src="{{asset('assets/custom/validator.js')}}"></script>
+
+  <!-- Custom validate end -->
+ 
  <script type="text/javascript">
      if ($(".page-wrapper").hasClass("horizontal-wrapper")) {
          $(".according-menu.other" ).css( "display", "none" );

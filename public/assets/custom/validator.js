@@ -5,19 +5,35 @@ function Validator(options){
         // Sự kiện on submit 
         form.onsubmit=(e)=>{
             e.preventDefault();
+            let haveError=false;
+            let error=false;
+            let formValues;
             options.rules.forEach(rule => {
-                let inputElement= document.querySelector(rule.selector);
+                let inputElement= document.querySelector(rule?.selector);
                 let errorElement=inputElement.parentElement.querySelector('.invalid-feedback');
-                validate(inputElement,rule,errorElement);
+                error=validate(inputElement,rule,errorElement)
+                if(!error) haveError=true;
             })
+            if(!haveError){
+                // submit callback custom use to call API || just validate!!
+                if(typeof options?.onSubmit==="function"){
+                    let enableInputs=form.querySelectorAll('[name]:not([disabled]):not([type=hidden])');
+                    formValues=Array.from(enableInputs).reduce((values,input)=>{
+                        return (values[input?.name]=input?.value) && values;
+                    },{});
+                    options.onSubmit(formValues);
+                }else{
+                    form.submit(); // Submit tự nhiên
+                }
+            } 
         }
         options.rules.forEach(rule => {
             // Lưu lại rule cho mỗi input
-            if(Array.isArray(rulesList[rule.selector]))
-                rulesList[rule.selector].push(rule.test); 
+            if(Array.isArray(rulesList[rule?.selector]))
+                rulesList[rule?.selector].push(rule?.test); 
             else
-                rulesList[rule.selector]=[rule.test];
-            let inputElement= document.querySelector(rule.selector);
+                rulesList[rule?.selector]=[rule?.test];
+            let inputElement= document.querySelector(rule?.selector);
             let errorElement=inputElement.parentElement.querySelector('.invalid-feedback');
             if(inputElement){
                 inputElement.onblur=()=>{
@@ -40,9 +56,9 @@ function Validator(options){
 }
 function validate(inputElement,rule,errorElement){
     var msg_err;
-    let rules =rulesList[rule.selector];
+    let rules =rulesList[rule?.selector];
     for (let i = 0; i < rules.length; i++) {
-        msg_err=rules[i](inputElement.value);
+        msg_err=rules[i](inputElement?.value);
         if(msg_err) break;
     }
     if(msg_err){
@@ -56,7 +72,7 @@ function validate(inputElement,rule,errorElement){
         inputElement.classList.remove('is-invalid');
         errorElement.innerText="";
     }
-    console.log(!msg_err);
+    return !msg_err;
 }
 // Nguyên tắc 
 // Có lỗi trả ra message lỗi
@@ -100,6 +116,15 @@ Validator.isConfirm=(selector,fncGetVal,msg)=>{
         selector:selector,
         test:(value)=>{
             return value+""==fncGetVal()?undefined:msg||'Giá trị nhập vào không chính xác!'
+        }
+    }
+}
+Validator.isWebsite=(selector,msg)=>{
+    return {
+        selector:selector,
+        test:(value) => {
+            let regex =/[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi
+            return regex.test(value.trim())?undefined:msg||"Trường này không phải là website"
         }
     }
 }

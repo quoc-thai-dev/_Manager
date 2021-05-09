@@ -125,7 +125,6 @@
     <!-- Plugin used-->
     <!-- Custom validate start -->
     <script src="{{asset('assets/custom/validator.js')}}"></script>
-    <!-- Custom validate end -->
     <script>
         Validator({
             form:'#login-form',
@@ -133,10 +132,17 @@
                 Validator.isRequired('#username','Tên đăng nhập không được bỏ trống!'),
                 Validator.isEmail('#username'),
                 Validator.isRequired('#password','Mật khẩu không được bỏ trống!'),
-                Validator.minLength('#password',6,'Mật khẩu không được dưới 6 ký tự!')
-            ]
+                Validator.minLength('#password',6,'Mật khẩu không được dưới 6 ký tự!'),
+            ],
+            // onSubmit:(data)=>{
+            //     // Call Api here
+            //     console.log(data);
+
+            // }
         })
     </script>
+    <!-- Custom validate end -->
+
 </body>
 
 </html>
