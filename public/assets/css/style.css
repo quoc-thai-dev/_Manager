@@ -17,7 +17,7 @@
      Reset css start
 ==========================**/
 .font-roboto {
-  font-family: Roboto, sans-serif; }
+  font-family: Baloo 2,Roboto, sans-serif; }
 
 /*====== Padding css starts ======*/
 .p-0 {
@@ -25091,7 +25091,7 @@ body[class*='dark-'] .for-light {
         font-weight: 500; }
         .page-wrapper.compact-wrapper .page-body-wrapper div.sidebar-wrapper .sidebar-main .sidebar-links li a span {
           letter-spacing: 0.7px;
-          font-family: Roboto;
+          font-family: Ballo 2;
           text-transform: capitalize;
           color: #2c323f; }
         .page-wrapper.compact-wrapper .page-body-wrapper div.sidebar-wrapper .sidebar-main .sidebar-links li a.link-nav .according-menu {
@@ -25216,7 +25216,7 @@ body[class*='dark-'] .for-light {
             position: relative;
             letter-spacing: 0.06em;
             font-weight: 500;
-            font-family: Roboto;
+            font-family: Ballo 2;
             -webkit-transition: all 0.3s ease;
             transition: all 0.3s ease;
             white-space: nowrap;
