@@ -38,46 +38,48 @@
 
                         <div class="mb-3">
                             <label class="form-label required">Tên đăng nhập</label>
-                            <input class="form-control" placeholder="Tên đăng nhập" id="username" name="username" disabled value="{{Auth::user()->username}}" data-bs-original-title=""
-                                title="">
-                                <span class="invalid-feedback"></span>
+                            <input class="form-control" placeholder="Tên đăng nhập" id="username" name="username"
+                                disabled value="{{Auth::user()->username}}" data-bs-original-title="" title="">
+                            <span class="invalid-feedback"></span>
 
                         </div>
                         <div class="mb-3">
                             <label class="form-label required">Mật khẩu cũ</label>
-                            <input class="form-control" type="password" id="_old_password"  name="_old_password" value="*****" data-bs-original-title=""
-                                title="">
-                                <span class="invalid-feedback"></span>
+                            <input class="form-control" type="password" id="_old_password" name="_old_password"
+                                value="*****" data-bs-original-title="" title="">
+                            <span class="invalid-feedback"></span>
                         </div>
                         <div class="mb-3">
                             <label class="form-label required">Mật khẩu mới</label>
-                            <input class="form-control" type="password" id="_new_password" name="_new_password" value="" data-bs-original-title=""
-                                title="">
-                                <span class="invalid-feedback"></span>
+                            <input class="form-control" type="password" id="_new_password" name="_new_password" value=""
+                                data-bs-original-title="" title="">
+                            <span class="invalid-feedback"></span>
 
                         </div>
                         <div class="mb-3">
                             <label class="form-label required">Nhập lại mật khẩu</label>
-                            <input class="form-control" type="password" id="_renew_password" name="_renew_password" value="" data-bs-original-title=""
-                                title="">
-                                <span class="invalid-feedback"></span>
+                            <input class="form-control" type="password" id="_renew_password" name="_renew_password"
+                                value="" data-bs-original-title="" title="">
+                            <span class="invalid-feedback"></span>
 
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Trang Web</label>
-                            <input class="form-control" placeholder="abc.xyz" id="website" name="website" value="{{Auth::user()->website}}" data-bs-original-title=""
-                                title="">
-                                <span class="invalid-feedback"></span>
+                            <input class="form-control" placeholder="abc.xyz" id="website" name="website"
+                                value="{{Auth::user()->website}}" data-bs-original-title="" title="">
+                            <span class="invalid-feedback"></span>
 
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Mô tả</label>
-                            <textarea class="form-control" name="description" id="description" value="{{Auth::user()->description}}" rows="5">Nhìn cc</textarea>
+                            <label class="form-label">Mô Tả</label>
+                            <textarea class="form-control" name="description" id="description"
+                                value="{{Auth::user()->description}}" rows="5">Nhìn cc</textarea>
                             <span class="invalid-feedback"></span>
 
                         </div>
                         <div class="form-footer">
-                            <button class="btn btn-primary btn-block" data-bs-original-title="" title="">Lưu</button>
+                            <button type="submit" class="btn btn-primary btn-block" data-bs-original-title=""
+                                title="">Lưu</button>
                             <label class="form-label pull-right text-danger"> (*) Thông tin bắt buộc</label>
                         </div>
                     </form>
@@ -98,36 +100,38 @@
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label class="form-label">Tên công ty</label>
-                                <input class="form-control" type="text" name="company_name" value="{{Auth::user()->company_name}}" placeholder="Tên công ty"
+                                <input class="form-control" type="text" name="company_name"
+                                    value="{{Auth::user()->company_name}}" placeholder="Tên công ty"
                                     data-bs-original-title="" title="">
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-6">
                             <div class="mb-3">
                                 <label class="form-label required">Địa chỉ Email</label>
-                                <input class="form-control" type="email" name="email" readonly value="{{Auth::user()->email}}" placeholder="Địa chỉ email"
+                                <input class="form-control" type="email" name="email" readonly
+                                    value="{{Auth::user()->email}}" placeholder="Địa chỉ email"
                                     data-bs-original-title="" title="">
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-6">
                             <div class="mb-3">
                                 <label class="form-label">Họ tên</label>
-                                <input class="form-control" type="text" placeholder="Họ tên" name="name" value="{{Auth::user()->name}}" data-bs-original-title=""
-                                    title="">
+                                <input class="form-control" type="text" placeholder="Họ tên" name="name"
+                                    value="{{Auth::user()->name}}" data-bs-original-title="" title="">
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-6">
                             <div class="mb-3">
                                 <label class="form-label required">Số điện thoại</label>
-                                <input class="form-control" type="text" placeholder="Số điện thoại" name="phone" value="{{Auth::user()->phone}}"  data-bs-original-title=""
-                                    title="">
+                                <input class="form-control" type="text" placeholder="Số điện thoại" name="phone"
+                                    value="{{Auth::user()->phone}}" data-bs-original-title="" title="">
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="mb-3">
                                 <label class="form-label">Địa chỉ</label>
-                                <input class="form-control" type="text" placeholder="Địa chỉ" name="address" value="{{Auth::user()->address}}" data-bs-original-title=""
-                                    title="">
+                                <input class="form-control" type="text" placeholder="Địa chỉ" name="address"
+                                    value="{{Auth::user()->address}}" data-bs-original-title="" title="">
                             </div>
                         </div>
 
@@ -170,13 +174,15 @@
                         <div class="col-md-12">
                             <div>
                                 <label class="form-label">Thông tin bản thân</label>
-                                <textarea class="form-control" rows="5" id="info" name="info" placeholder="Thông tin bản thân">{{Auth::user()->info}}</textarea>
+                                <textarea class="form-control" rows="5" id="info" name="info"
+                                    placeholder="Thông tin bản thân">{{Auth::user()->info}}</textarea>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="card-footer text-end">
-                    <button class="btn btn-primary" type="submit" data-bs-original-title="Cập nhật hồ sơ" title="">Cập nhật hồ
+                    <button class="btn btn-primary" type="submit" data-bs-original-title="Cập nhật hồ sơ" title="">Cập
+                        nhật hồ
                         sơ</button>
                 </div>
             </form>
